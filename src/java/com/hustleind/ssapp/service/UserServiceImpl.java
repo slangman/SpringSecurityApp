@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Implementation of (@link UserService) interface
+ * Implementation of {@link UserService} interface
  *
  * @author Vasya Pupkin
  * @version 1.0

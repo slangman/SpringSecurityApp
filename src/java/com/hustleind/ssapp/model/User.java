@@ -7,6 +7,7 @@ import java.util.Set;
  * Simple JavaBean domain object that represents user.
  *
  * @author Vasya Pupkin
+ * @version 1.0
  */
 
 
