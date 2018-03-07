@@ -1,7 +1,7 @@
 package com.hustleind.ssapp.service;
 
-import com.hustleind.ssapp.dao.UserDao;
 import com.hustleind.ssapp.model.Role;
+import com.hustleind.ssapp.dao.UserDao;
 import com.hustleind.ssapp.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,7 +16,7 @@ import java.util.Set;
 
 
 /**
- * Implementation of {@link org.springframework.security.core.userdetails.UserDetailsService}
+ * Implementation of {@link org.springframework.security.core.userdetails.UserDetailsService} interface
  *
  * @author Vasya Pupkin
  * @version 1.0
@@ -28,10 +28,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserDao userDao;
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.findByUsername(username);
+
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+
         for (Role role : user.getRoles()) {
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         }

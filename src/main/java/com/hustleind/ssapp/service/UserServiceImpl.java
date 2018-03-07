@@ -1,8 +1,8 @@
 package com.hustleind.ssapp.service;
 
+import com.hustleind.ssapp.model.Role;
 import com.hustleind.ssapp.dao.RoleDao;
 import com.hustleind.ssapp.dao.UserDao;
-import com.hustleind.ssapp.model.Role;
 import com.hustleind.ssapp.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

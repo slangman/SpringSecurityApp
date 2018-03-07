@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Controller for {@link com.hustleind.ssapp.model.User}'s pages.
+ * Controller for {@link User}'s pages.
  *
  * @author Vasya Pupkin
  * @version 1.0
@@ -37,6 +37,7 @@ public class UserController {
         return "registration";
     }
 
+    /*
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
         userValidator.validate(userForm, bindingResult);
@@ -49,6 +50,8 @@ public class UserController {
         securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
         return "redirect:/welcome.jsp";
     }
+    */
+
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -64,9 +67,9 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = {"/", "/welcome.jsp"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome (Model model) {
-        return "welcome.jsp";
+        return "welcome";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
